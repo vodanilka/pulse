@@ -137,6 +137,71 @@
   font-weight: 500;
   text-transform: uppercase;
 }
+.button_main {
+  width: 300px;
+  height: 50px;
+  margin-top: 67px;
+  font-size: 16px;
+}
+
+.advantage {
+  height: 471px;
+  padding: 71px 0 78px 0;
+  background-color: #F6F6F6;
+}
+.advantage__title {
+  color: #0D0D0D;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+.advantage__wrapper {
+  margin-top: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.advantage__item {
+  width: 242px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.advantage__item h2 {
+  color: #0D0D0D;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 38px;
+}
+.advantage__item span {
+  margin-top: 26px;
+  color: #0D0D0D;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+}
+.advantage__icon {
+  width: 70px;
+  height: 70px;
+}
+.advantage__link {
+  color: #F00;
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration-line: underline;
+}
 
 * {
   font-family: "MuseoModerno", cursive;
