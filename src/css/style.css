@@ -353,12 +353,25 @@
 }
 .catalog__content {
   margin-top: 60px;
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.catalog__content_active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .catalog-item {
   width: 300px;
   min-height: 440px;
   border: 2px solid #e8e8e8;
   padding: 20px 20px 26px 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 .catalog-item__img {
   max-width: 100%;
@@ -416,6 +429,78 @@
   color: #050505;
   font-size: 20px;
   font-weight: 700;
+}
+.catalog-item__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(200% + 40px);
+}
+.catalog-item__content {
+  width: 50%;
+  margin-right: 0px;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  padding-right: 20px;
+}
+.catalog-item__content_active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  transform-margin-right: 20px;
+}
+.catalog-item__list {
+  width: 50%;
+  margin-left: 20px;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  padding-right: 20px;
+  padding-left: 19px;
+  margin-bottom: 0;
+  list-style-type: none;
+  position: relative;
+}
+.catalog-item__list_active {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  margin-left: 0px;
+}
+.catalog-item__list li {
+  color: #555;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.catalog-item__list li::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #C70101;
+  left: -14px;
+  top: 9px;
+}
+.catalog-item__back {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(calc(-50% - 19PX));
+          transform: translateX(calc(-50% - 19PX));
+  color: #C70101;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+}
+.catalog-item__back:hover {
+  color: #C70101;
 }
 
 * {
