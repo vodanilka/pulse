@@ -14,20 +14,67 @@ $(document).ready(function(){
         .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
     });
   
-  function toggleClass (item) {
-    $(item).each(function(i){
-      $(this).on('click', function(e){
+  // function toggleSlide (item) {
+  //   $(item).each(function(i){
+  //     $(this).on('click', function(e){
+  //     e.preventDefault();
+  //     $('.catalog-item__content').eq(i).toggleClass('.catalog-item__content_active');
+  //     $('.catalog-item__list').eq(i).toggleClass('.catalog-item__list_active');
+  //     })
+  //   });
+  // };
+  // toggleSlide('.catalog-item__link');
+  // toggleSlide('.catalog-item__back');
+
+
+//                                 MY CODE with chatGPT!!!!!!!!!!!!!!!!!!!!!!!!
+  function toggleSlide(item){
+  $(".catalog-item").each(function() {
+    const container = $(this);
+    container.find(item).click(function(e) {
       e.preventDefault();
-      $('.catalog-item__content').eq(i).toggleClass('.catalog-item__content_active');
-      $('.catalog-item__list').eq(i).toggleClass('.catalog-item__list_active');
-      })
-    })
-  }
-  toggleClass('.catalog-item__link');
-  toggleClass('.catalog-item__back')
+      container.find(".catalog-item__content").toggleClass("catalog-item__content_active");
+      container.find(".catalog-item__list").toggleClass("catalog-item__list_active");
+    });
+  });
+};
+toggleSlide ('.catalog-item__link');
+toggleSlide ('.catalog-item__back');
+
+    $('[data-modal="consultation"]').on('click', function(){
+      $('.overlay, #consultation').fadeIn('slow');});
+    $('.modal__close').on('click', function(){
+      $('#consultation, #order, #thanks, .overlay').fadeOut('slow');});
   
-    
+  $('.button_mini').each(function(i){
+    $(this).on('click', function(){
+        $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+        $('.button_mini').on('click', function(){
+          $('.overlay, #order').fadeIn('slow')});
+    });
+  });
+
 
  
-    
-  });
+
+function validateForm (form){
+  $(form).validate({
+    rules:{ 
+      name: "required",
+      phone: "required",
+      email:{
+        required: true,
+        email: true
+      }
+
+    }
+  })
+};
+validateForm('#consultation-form');
+validateForm('#consultation form');
+validateForm('#order form');
+
+$('input[name="phone"]').mask("(999) 999-9999");
+
+
+})
