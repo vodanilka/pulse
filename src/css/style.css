@@ -1,3 +1,31 @@
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 .promo {
   min-height: 650px;
   padding: 21px 0 93px 0;
@@ -205,6 +233,16 @@
   font-size: 14px;
   font-weight: 300;
   text-decoration-line: underline;
+}
+.advantage__icon_animation {
+  -webkit-animation-name: heartbeat;
+          animation-name: heartbeat;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 @media screen and (max-width: 768px) {
@@ -686,6 +724,18 @@
 
 #consultation, #order, #thanks {
   display: none;
+}
+
+.pageup {
+  display: none;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 40px;
+  height: 40px;
+}
+.pageup .img {
+  height: 100%;
 }
 
 * {

@@ -27,7 +27,6 @@ $(document).ready(function(){
   // toggleSlide('.catalog-item__back');
 
 
-//                                 MY CODE with chatGPT!!!!!!!!!!!!!!!!!!!!!!!!
   function toggleSlide(item){
   $(".catalog-item").each(function() {
     const container = $(this);
@@ -98,4 +97,33 @@ $('form').submit(function(e){
   });
   return false;
 });
+
+// slow up
+
+$(window).scroll(function () { 
+  if ($(this).scrollTop() > 1600){
+    $('.pageup').fadeIn();
+  } else $('.pageup').fadeOut();
+  
+});
+
+function scrollToPosition(target, duration) {
+  if (duration <= 0) return;
+  $('html, body').animate(
+    {
+      scrollTop: target.offset().top,
+    },
+    duration
+  );
+}
+$('a[href^="#"]').on('click', function (event) {
+  event.preventDefault();
+
+  const target = $($(this).attr('href'));
+  const duration = 1000; // Duration of the scroll animation in milliseconds
+
+  scrollToPosition(target, duration);
+});
+
+
 })
